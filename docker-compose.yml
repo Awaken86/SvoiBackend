@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+
+  db:
+    image: mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: 567kybik
+      MYSQL_DATABASE: "ecom"
+    ports:
+      - '5676:5676'
+    command: --default-authentication-plugin=mysql_native_password
