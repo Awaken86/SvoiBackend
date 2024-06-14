@@ -4,7 +4,7 @@ FROM node:14
 WORKDIR /app
 
 # Increase the number of open files allowed in the container
-RUN echo "fs.inotify.max_user_watches=524288" >> /etc/sysctl.conf && sysctl -p
+RUN echo "fs.inotify.max_user_watches=524288" > /etc/sysctl.d/99-sysctl.conf
 
 # Copy package.json and package-lock.json to the container
 COPY package*.json ./
