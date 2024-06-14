@@ -10,6 +10,7 @@ RUN echo "fs.inotify.max_user_watches=524288" > /etc/sysctl.d/99-sysctl.conf
 COPY package*.json ./
 
 # Install dependencies
+RUN npm install chokidar
 RUN npm install
 
 # Copy the rest of the application files to the container
