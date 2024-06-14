@@ -1,17 +1,16 @@
-# Используйте официальный образ Node.js
-FROM node:latest
+FROM node:14
 
-# Устанавливаем рабочую директорию в контейнере
+# Set the working directory in the container
 WORKDIR /app
 
-# Копируем файлы приложения в контейнер
+# Copy package.json and package-lock.json to the container
 COPY package*.json ./
 
-# Устанавливаем зависимости
+# Install dependencies
 RUN npm install
 
-# Копируем остальные файлы приложения в контейнер
+# Copy the rest of the application files to the container
 COPY . .
 
-# Запускаем приложение
-CMD ["npm", "start"]
+# Set the command to run the application
+CMD ["npm", "run", "dev"]

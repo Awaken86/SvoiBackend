@@ -1,32 +1,30 @@
-version: '3'
+version: '3.8'
+
 services:
+  app:
+    build: .
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+    links:
+      - db
+    environment:
+      - DB_HOST=db
+      - DB_USER=root
+      - DB_PASSWORD=567kybik
+      - DB_DATABASE=ecom
+
   db:
     image: mysql:latest
-    container_name: sqldb
+    restart: always
     ports:
       - "3306:3306"
     environment:
       - MYSQL_ROOT_PASSWORD=567kybik
       - MYSQL_DATABASE=ecom
-      - MYSQL_USER=myuser
-      - MYSQL_PASSWORD=mypassword
     volumes:
       - mysqldata:/var/lib/mysql
-
-  backend:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    container_name: mybackend
-    ports:
-      - "1488:1488"
-    depends_on:
-      - db
-    environment:
-      - DB_HOST=db
-      - DB_USER=myuser
-      - DB_PASSWORD=mypassword
-      - DB_NAME=ecom
 
 volumes:
   mysqldata:
