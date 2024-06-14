@@ -6,7 +6,8 @@
     "scripts": {
         "dev": "nodemon index.js",
         "test": "echo \"Error: no test specified\" && exit 1",
-        "start": "node index.js"
+        "start": "node index.js",
+        "dev": "chokidar '**/*.js' -c 'npm run build'"
     },
     "author": "",
     "license": "ISC",
@@ -20,6 +21,7 @@
         "uuid": "^10.0.0"
     },
     "devDependencies": {
+        "chokidar": "^3.6.0",
         "nodemon": "^3.1.3"
     }
 }
