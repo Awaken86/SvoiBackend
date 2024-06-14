@@ -12,7 +12,7 @@ COPY package*.json ./
 # Install dependencies
 RUN npm install
 
-# Copy the rest of the application files to the container
+# Copy the rest of the application files to tdhe container
 COPY . .
 
 # Set the command to run the application
