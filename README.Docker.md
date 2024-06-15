@@ -1,5 +1,5 @@
 ### Building and running your application
-
+ТАМ БЛЯ О БЛЯ ТО БЛЯТЬ О БЛЯТЬ ТО БЛЯ ЭТО БЛЯ
 When you're ready, start your application by running:
 `docker compose up --build`.
 
