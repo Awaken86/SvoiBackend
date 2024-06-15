@@ -1,0 +1,31 @@
+version: '3'
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - mysqldata:/var/lib/mysql
+    restart: always
+    environment:
+      MYSQL_HOST: db
+      MYSQL_USER: root
+      MYSQL_PASSWORD: 567kybik
+      MYSQL_DATABASE: ecom
+    ports:
+      - 1488:1488
+    depends_on:
+      - db
+  db:
+    container_name: sqldb
+    image: awaken86/imagesql:latest
+    environment:
+      MYSQL_ROOT_PASSWORD: 567kybik
+      MYSQL_DATABASE: ecom
+    volumes:
+      - mysqldata:/var/lib/mysql
+    ports:
+      - 3306:3306
+
+volumes:
+  mysqldata:

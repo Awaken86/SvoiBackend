@@ -23,6 +23,10 @@ connectToDatabase().then(() => {
     app.listen(port, () => {
 
         console.log(`Example app listening on port ${port}`)
+        router.get('/menu', (req, res) => {
+            // Обработка запроса на /api/menu
+            res.send('Это ответ на GET-запрос на /api/menu');
+        });
     })
 }).catch((error) => {
     console.log(error)

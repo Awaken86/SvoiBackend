@@ -6,8 +6,7 @@
     "scripts": {
         "dev": "nodemon index.js",
         "test": "echo \"Error: no test specified\" && exit 1",
-        "start": "node index.js",
-        "dev": "chokidar '**/*.js' -c 'npm run build'"
+        "start": "node index.js"
     },
     "author": "",
     "license": "ISC",
